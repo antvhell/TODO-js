@@ -7,9 +7,6 @@ const divTodoList = document.querySelector('.todo-list');
 const txtInput    = document.querySelector('.new-todo'); 
 
 
-
-
-
 export const crearTodoHtml = (todo) => {
     const htmlTodo = `
     <li class="${ (todo.completado) ? 'completed' : '' }" data-id="${todo.id}">
@@ -59,6 +56,7 @@ divTodoList.addEventListener('click', (event) => {
 
     const todoId         = todoElemento.getAttribute('data-id')
     
+    console.log(nombreElemento);
     // console.log(todoElemento);
     // console.log(todoId);
 
@@ -66,5 +64,9 @@ divTodoList.addEventListener('click', (event) => {
         todoList.marcarCompletado(todoId);
         console.log(todoList);
         todoElemento.classList.toggle('completed');
+    } else if (nombreElemento.includes('button')){ // Hay que borrar el todo
+        todoList.eliminarTodo( todoId );
+        divTodoList.removeChild( todoElemento );
+
     } 
 })
