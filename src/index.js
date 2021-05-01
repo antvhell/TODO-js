@@ -29,3 +29,5 @@ export const todoList = new TodoList();
 
 // todoList.todos.forEach( todo => crearTodoHtml (todo) ); // Forma normal 
 todoList.todos.forEach( crearTodoHtml); // Forma corta y sencilla
+
+console.log('todos', todoList.todos);
